@@ -288,7 +288,7 @@ public:
         genesis.nTime = 1529678586;
         genesis.nNonce = 4613952;
 
-        hashGenesisBlock = uint256("0x00000b66e1ffd739fe31538bd6ffda747023c70083531b404c6a0cb4f1fc3f8d");
+        hashGenesisBlock = uint256("0x000006eda8aa2be2121fe01ecbd4b491ed2feab6c275617b2316ac8524c4dd7a");
 
         if (true && genesis.GetHash() != hashGenesisBlock)
         {
@@ -372,7 +372,7 @@ public:
 
         nDefaultPort = 33476;
 
-        hashGenesisBlock = uint256("0x000004d7612158b7fdefa490e7d8464e3f64d1cdf9eb035a2225c327a4a29918");
+        hashGenesisBlock = uint256("0x000006eda8aa2be2121fe01ecbd4b491ed2feab6c275617b2316ac8524c4dd7a");
 
         if (true && genesis.GetHash() != hashGenesisBlock)
         {
@@ -389,7 +389,7 @@ public:
 
         hashGenesisBlock = genesis.GetHash();
 
-        assert(hashGenesisBlock == uint256("0x000004d7612158b7fdefa490e7d8464e3f64d1cdf9eb035a2225c327a4a29918"));
+        assert(hashGenesisBlock == uint256("0x000006eda8aa2be2121fe01ecbd4b491ed2feab6c275617b2316ac8524c4dd7a"));
         assert(genesis.hashMerkleRoot == uint256("0xba1c87b47ba2360f0af2aa288884d926c8515fce00d5424bed4ba77df9d82701"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
