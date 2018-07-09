@@ -1,9 +1,9 @@
-// Copyright (c) 2017 The Delectrum developers
+// Copyright (c) 2017 The Brewhaust developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef DELECTRUM_CSPORKDB_H
-#define DELECTRUM_CSPORKDB_H
+#ifndef BREWHAUST_CSPORKDB_H
+#define BREWHAUST_CSPORKDB_H
 
 #include <boost/filesystem/path.hpp>
 #include "leveldbwrapper.h"
@@ -25,4 +25,4 @@ public:
 };
 
 
-#endif //DELECTRUM_CSPORKDB_H
+#endif //BREWHAUST_CSPORKDB_H

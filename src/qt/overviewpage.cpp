@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The Delectrum developers
+// Copyright (c) 2015-2017 The Brewhaust developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -35,7 +35,7 @@ class TxViewDelegate : public QAbstractItemDelegate
 {
     Q_OBJECT
 public:
-    TxViewDelegate() : QAbstractItemDelegate(), unit(BitcoinUnits::DLTR)
+    TxViewDelegate() : QAbstractItemDelegate(), unit(BitcoinUnits::BRU)
     {
     }
 
@@ -164,7 +164,7 @@ OverviewPage::~OverviewPage()
     delete ui;
 }
 
-void OverviewPage::getPercentage(CAmount nUnlockedBalance, CAmount nZerocoinBalance, QString& sDLTRPercentage, QString& szDLTPercentage)
+void OverviewPage::getPercentage(CAmount nUnlockedBalance, CAmount nZerocoinBalance, QString& sBRUPercentage, QString& szDLTPercentage)
 {
     int nPrecision = 2;
     double dzPercentage = 0.0;
@@ -184,7 +184,7 @@ void OverviewPage::getPercentage(CAmount nUnlockedBalance, CAmount nZerocoinBala
     double dPercentage = 100.0 - dzPercentage;
     
     szDLTPercentage = "(" + QLocale(QLocale::system()).toString(dzPercentage, 'f', nPrecision) + " %)";
-    sDLTRPercentage = "(" + QLocale(QLocale::system()).toString(dPercentage, 'f', nPrecision) + " %)";
+    sBRUPercentage = "(" + QLocale(QLocale::system()).toString(dPercentage, 'f', nPrecision) + " %)";
     
 }
 
@@ -208,7 +208,7 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
         nLockedBalance = pwalletMain->GetLockedCoins();
         nWatchOnlyLockedBalance = pwalletMain->GetLockedWatchOnlyBalance();
     }
-    // DLTR Balance
+    // BRU Balance
     CAmount nTotalBalance = balance + unconfirmedBalance;
     CAmount dltrAvailableBalance = balance - immatureBalance - nLockedBalance;
     CAmount nTotalWatchBalance = watchOnlyBalance + watchUnconfBalance + watchImmatureBalance;    
@@ -223,7 +223,7 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     CAmount availableTotalBalance = dltrAvailableBalance + matureZerocoinBalance;
     CAmount sumTotalBalance = nTotalBalance + zerocoinBalance;
 
-    // DLTR labels
+    // BRU labels
     ui->labelBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, dltrAvailableBalance, false, BitcoinUnits::separatorAlways));
     ui->labelUnconfirmed->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, unconfirmedBalance, false, BitcoinUnits::separatorAlways));
     ui->labelImmature->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, immatureBalance, false, BitcoinUnits::separatorAlways));
@@ -248,7 +248,7 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     ui->labelTotalz->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, sumTotalBalance, false, BitcoinUnits::separatorAlways));
 
     // Percentage labels
-    ui->labelDLTRPercent->setText(sPercentage);
+    ui->labelBRUPercent->setText(sPercentage);
     ui->labelzDLTPercent->setText(szPercentage);
 
     // Adjust bubble-help according to AutoMint settings
@@ -257,10 +257,10 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     int nZeromintPercentage = GetArg("-zeromintpercentage", 10);
     if (fEnableZeromint) {
         automintHelp += tr("AutoMint is currently enabled and set to ") + QString::number(nZeromintPercentage) + "%.\n";
-        automintHelp += tr("To disable AutoMint add 'enablezeromint=0' in delectrum.conf.");
+        automintHelp += tr("To disable AutoMint add 'enablezeromint=0' in brewhaust.conf.");
     }
     else {
-        automintHelp += tr("AutoMint is currently disabled.\nTo enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in delectrum.conf");
+        automintHelp += tr("AutoMint is currently disabled.\nTo enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in brewhaust.conf");
     }
 
     // Only show most balances if they are non-zero for the sake of simplicity
@@ -269,24 +269,24 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     bool showSumAvailable = settingShowAllBalances || sumTotalBalance != availableTotalBalance;
     ui->labelBalanceTextz->setVisible(showSumAvailable);
     ui->labelBalancez->setVisible(showSumAvailable);
-    bool showDLTRAvailable = settingShowAllBalances || dltrAvailableBalance != nTotalBalance;
-    bool showWatchOnlyDLTRAvailable = watchOnlyBalance != nTotalWatchBalance;
-    bool showDLTRPending = settingShowAllBalances || unconfirmedBalance != 0;
-    bool showWatchOnlyDLTRPending = watchUnconfBalance != 0;
-    bool showDLTRLocked = settingShowAllBalances || nLockedBalance != 0;
-    bool showWatchOnlyDLTRLocked = nWatchOnlyLockedBalance != 0;
+    bool showBRUAvailable = settingShowAllBalances || dltrAvailableBalance != nTotalBalance;
+    bool showWatchOnlyBRUAvailable = watchOnlyBalance != nTotalWatchBalance;
+    bool showBRUPending = settingShowAllBalances || unconfirmedBalance != 0;
+    bool showWatchOnlyBRUPending = watchUnconfBalance != 0;
+    bool showBRULocked = settingShowAllBalances || nLockedBalance != 0;
+    bool showWatchOnlyBRULocked = nWatchOnlyLockedBalance != 0;
     bool showImmature = settingShowAllBalances || immatureBalance != 0;
     bool showWatchOnlyImmature = watchImmatureBalance != 0;
     bool showWatchOnly = nTotalWatchBalance != 0;
-    ui->labelBalance->setVisible(showDLTRAvailable || showWatchOnlyDLTRAvailable);
-    ui->labelBalanceText->setVisible(showDLTRAvailable || showWatchOnlyDLTRAvailable);
-    ui->labelWatchAvailable->setVisible(showDLTRAvailable && showWatchOnly);
-    ui->labelUnconfirmed->setVisible(showDLTRPending || showWatchOnlyDLTRPending);
-    ui->labelPendingText->setVisible(showDLTRPending || showWatchOnlyDLTRPending);
-    ui->labelWatchPending->setVisible(showDLTRPending && showWatchOnly);
-    ui->labelLockedBalance->setVisible(showDLTRLocked || showWatchOnlyDLTRLocked);
-    ui->labelLockedBalanceText->setVisible(showDLTRLocked || showWatchOnlyDLTRLocked);
-    ui->labelWatchLocked->setVisible(showDLTRLocked && showWatchOnly);
+    ui->labelBalance->setVisible(showBRUAvailable || showWatchOnlyBRUAvailable);
+    ui->labelBalanceText->setVisible(showBRUAvailable || showWatchOnlyBRUAvailable);
+    ui->labelWatchAvailable->setVisible(showBRUAvailable && showWatchOnly);
+    ui->labelUnconfirmed->setVisible(showBRUPending || showWatchOnlyBRUPending);
+    ui->labelPendingText->setVisible(showBRUPending || showWatchOnlyBRUPending);
+    ui->labelWatchPending->setVisible(showBRUPending && showWatchOnly);
+    ui->labelLockedBalance->setVisible(showBRULocked || showWatchOnlyBRULocked);
+    ui->labelLockedBalanceText->setVisible(showBRULocked || showWatchOnlyBRULocked);
+    ui->labelWatchLocked->setVisible(showBRULocked && showWatchOnly);
     ui->labelImmature->setVisible(showImmature || showWatchOnlyImmature); // for symmetry reasons also show immature label when the watch-only one is shown
     ui->labelImmatureText->setVisible(showImmature || showWatchOnlyImmature);
     ui->labelWatchImmature->setVisible(showImmature && showWatchOnly); // show watch-only immature balance
@@ -300,7 +300,7 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     ui->labelzBalanceImmature->setVisible(showzDLTImmature);
     ui->labelzBalanceImmatureText->setVisible(showzDLTImmature);
     bool showPercentages = ! (zerocoinBalance == 0 && nTotalBalance == 0);
-    ui->labelDLTRPercent->setVisible(showPercentages);
+    ui->labelBRUPercent->setVisible(showPercentages);
     ui->labelzDLTPercent->setVisible(showPercentages);
 
     static int cachedTxLocks = 0;
@@ -372,7 +372,7 @@ void OverviewPage::setWalletModel(WalletModel* model)
         connect(model, SIGNAL(notifyWatchonlyChanged(bool)), this, SLOT(updateWatchOnlyLabels(bool)));
     }
 
-    // update the display unit, to not use the default ("DLTR")
+    // update the display unit, to not use the default ("BRU")
     updateDisplayUnit();
 }
 

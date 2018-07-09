@@ -80,15 +80,15 @@ noinst_PROGRAMS =
 TESTS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += delectrumd
+  bin_PROGRAMS += brewhaustd
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += delectrum-cli delectrum-tx
+  bin_PROGRAMS += brewhaust-cli brewhaust-tx
 endif
 
 .PHONY: FORCE
-# delectrum core #
+# brewhaust core #
 BITCOIN_CORE_H = \
   activemasternode.h \
   accumulators.h \
@@ -196,7 +196,7 @@ obj/build.h: FORCE
 	  "$(abs_top_srcdir)"
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between delectrumd and delectrum-qt
+# server: shared between brewhaustd and brewhaust-qt
 libbitcoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_server_a_SOURCES = \
@@ -242,7 +242,7 @@ libbitcoin_zmq_a_SOURCES = \
   zmq/zmqpublishnotifier.cpp
 endif
 
-# wallet: shared between delectrumd and delectrum-qt, but only linked
+# wallet: shared between brewhaustd and brewhaust-qt, but only linked
 # when wallet enabled
 libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -331,7 +331,7 @@ libzerocoin_libbitcoin_zerocoin_a_SOURCES = \
   libzerocoin/Params.cpp \
   libzerocoin/SerialNumberSignatureOfKnowledge.cpp
 
-# common: shared between delectrumd, and delectrum-qt and non-server tools
+# common: shared between brewhaustd, and brewhaust-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_common_a_SOURCES = \
@@ -393,7 +393,7 @@ if GLIBC_BACK_COMPAT
 libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
 endif
 
-# cli: shared between delectrum-cli and delectrum-qt
+# cli: shared between brewhaust-cli and brewhaust-qt
 libbitcoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_cli_a_SOURCES = \
@@ -403,16 +403,16 @@ libbitcoin_cli_a_SOURCES = \
 nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# delectrumd binary #
-delectrumd_SOURCES = delectrumd.cpp
-delectrumd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-delectrumd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-delectrumd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# brewhaustd binary #
+brewhaustd_SOURCES = brewhaustd.cpp
+brewhaustd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+brewhaustd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+brewhaustd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-delectrumd_SOURCES += delectrumd-res.rc
+brewhaustd_SOURCES += brewhaustd-res.rc
 endif
-delectrumd_LDADD = \
+brewhaustd_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBUNIVALUE) \
@@ -425,38 +425,38 @@ delectrumd_LDADD = \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-delectrumd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
+brewhaustd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
-# delectrum-cli binary #
-delectrum_cli_SOURCES = delectrum-cli.cpp
-delectrum_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-delectrum_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-delectrum_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# brewhaust-cli binary #
+brewhaust_cli_SOURCES = brewhaust-cli.cpp
+brewhaust_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+brewhaust_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+brewhaust_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-delectrum_cli_SOURCES += delectrum-cli-res.rc
+brewhaust_cli_SOURCES += brewhaust-cli-res.rc
 endif
 
-delectrum_cli_LDADD = \
+brewhaust_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO)
 
-delectrum_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+brewhaust_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
-# delectrum-tx binary #
-delectrum_tx_SOURCES = delectrum-tx.cpp
-delectrum_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-delectrum_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-delectrum_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# brewhaust-tx binary #
+brewhaust_tx_SOURCES = brewhaust-tx.cpp
+brewhaust_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+brewhaust_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+brewhaust_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-delectrum_tx_SOURCES += delectrum-tx-res.rc
+brewhaust_tx_SOURCES += brewhaust-tx-res.rc
 endif
 
-delectrum_tx_LDADD = \
+brewhaust_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_ZEROCOIN) \
@@ -464,7 +464,7 @@ delectrum_tx_LDADD = \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-delectrum_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+brewhaust_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
 # bitcoinconsensus library #

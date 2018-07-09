@@ -1,40 +1,40 @@
-Delectrum Core
+Brewhaust Core
 =====================
 
 Setup
 ---------------------
-[Delectrum Core](http://delectrum.org/wallet) is the original Delectrum client and it builds the backbone of the network. However, it downloads and stores the entire history of Delectrum transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
+[Brewhaust Core](http://brewhaust.org/wallet) is the original Brewhaust client and it builds the backbone of the network. However, it downloads and stores the entire history of Brewhaust transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
 
 Running
 ---------------------
-The following are some helpful notes on how to run Delectrum on your native platform.
+The following are some helpful notes on how to run Brewhaust on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- bin/32/delectrum-qt (GUI, 32-bit) or bin/32/delectrumd (headless, 32-bit)
-- bin/64/delectrum-qt (GUI, 64-bit) or bin/64/delectrumd (headless, 64-bit)
+- bin/32/brewhaust-qt (GUI, 32-bit) or bin/32/brewhaustd (headless, 32-bit)
+- bin/64/brewhaust-qt (GUI, 64-bit) or bin/64/brewhaustd (headless, 64-bit)
 
 ### Windows
 
-Unpack the files into a directory, and then run delectrum-qt.exe.
+Unpack the files into a directory, and then run brewhaust-qt.exe.
 
 ### OSX
 
-Drag Delectrum-Qt to your applications folder, and then run Delectrum-Qt.
+Drag Brewhaust-Qt to your applications folder, and then run Brewhaust-Qt.
 
 ### Need Help?
 
-* See the documentation at the [Delectrum Wiki](https://en.bitcoin.it/wiki/Main_Page) ***TODO***
+* See the documentation at the [Brewhaust Wiki](https://en.bitcoin.it/wiki/Main_Page) ***TODO***
 for help and more information.
-* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [Delectrum Forum](http://forum.delectrum.org/).
-* Join our Discord server [Discord Server](https://discord.delectrum.org)
-* Join one of our Slack groups [Delectrum Slack Groups](https://delectrum.org/slack-logins/) (Main community is replaced by Discord).
+* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [Brewhaust Forum](http://forum.brewhaust.org/).
+* Join our Discord server [Discord Server](https://discord.brewhaust.org)
+* Join one of our Slack groups [Brewhaust Slack Groups](https://brewhaust.org/slack-logins/) (Main community is replaced by Discord).
 
 Building
 ---------------------
-The following are developer notes on how to build Delectrum on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build Brewhaust on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [OSX Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
@@ -42,7 +42,7 @@ The following are developer notes on how to build Delectrum on your native platf
 
 Development
 ---------------------
-The Delectrum repo's [root README](https://github.com/Delectrum-Project/Delectrum/blob/master/README.md) contains relevant information on the development process and automated testing.
+The Brewhaust repo's [root README](https://github.com/Brewhaust-Project/Brewhaust/blob/master/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)
@@ -56,8 +56,8 @@ The Delectrum repo's [root README](https://github.com/Delectrum-Project/Delectru
 
 ### Resources
 
-* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or the [Delectrum](http://forum.delectrum.org/) forum.
-* Join the [Delectrum-Dev](https://delectrum-dev.slack.com/) Slack group ([Sign-Up](https://delectrum-dev.herokuapp.com/)).
+* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or the [Brewhaust](http://forum.brewhaust.org/) forum.
+* Join the [Brewhaust-Dev](https://brewhaust-dev.slack.com/) Slack group ([Sign-Up](https://brewhaust-dev.herokuapp.com/)).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

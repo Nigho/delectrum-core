@@ -1,9 +1,9 @@
-// Copyright (c) 2017 The Delectrum developers
+// Copyright (c) 2017 The Brewhaust developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef DELECTRUM_ACCUMULATORS_H
-#define DELECTRUM_ACCUMULATORS_H
+#ifndef BREWHAUST_ACCUMULATORS_H
+#define BREWHAUST_ACCUMULATORS_H
 
 #include "libzerocoin/Accumulator.h"
 #include "libzerocoin/Coin.h"
@@ -26,4 +26,4 @@ uint32_t GetChecksum(const CBigNum &bnValue);
 bool InvalidCheckpointRange(int nHeight);
 bool ValidateAccumulatorCheckpoint(const CBlock& block, CBlockIndex* pindex, AccumulatorMap& mapAccumulators);
 
-#endif //DELECTRUM_ACCUMULATORS_H
+#endif //BREWHAUST_ACCUMULATORS_H

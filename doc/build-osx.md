@@ -1,6 +1,6 @@
 Mac OS X Build Instructions and Notes
 ====================================
-This guide will show you how to build delectrumd (headless client) for OSX.
+This guide will show you how to build brewhaustd (headless client) for OSX.
 
 Notes
 -----
@@ -40,14 +40,14 @@ Instructions: Homebrew
 
         brew install autoconf automake berkeley-db4 libtool boost miniupnpc openssl pkg-config protobuf qt5 zmq libevent
 
-### Building `delectrumd`
+### Building `brewhaustd`
 
 1. Clone the github tree to get the source code and go into the directory.
 
-        git clone https://github.com/Delectrum-Project/Delectrum.git
-        cd Delectrum
+        git clone https://github.com/Brewhaust-Project/Brewhaust.git
+        cd Brewhaust
 
-2.  Build delectrumd:
+2.  Build brewhaustd:
 
         ./autogen.sh
         ./configure --with-gui=qt5
@@ -57,7 +57,7 @@ Instructions: Homebrew
 
         make check
 
-4.  (Optional) You can also install delectrumd to your path:
+4.  (Optional) You can also install brewhaustd to your path:
 
         make install
 
@@ -69,7 +69,7 @@ Download Qt Creator from http://www.qt.io/download/. Download the "community edi
 1. Make sure you installed everything through homebrew mentioned above
 2. Do a proper ./configure --with-gui=qt5 --enable-debug
 3. In Qt Creator do "New Project" -> Import Project -> Import Existing Project
-4. Enter "delectrum-qt" as project name, enter src/qt as location
+4. Enter "brewhaust-qt" as project name, enter src/qt as location
 5. Leave the file selection as it is
 6. Confirm the "summary page"
 7. In the "Projects" tab select "Manage Kits..."
@@ -79,11 +79,11 @@ Download Qt Creator from http://www.qt.io/download/. Download the "community edi
 
 Creating a release build
 ------------------------
-You can ignore this section if you are building `delectrumd` for your own use.
+You can ignore this section if you are building `brewhaustd` for your own use.
 
-delectrumd/delectrum-cli binaries are not included in the delectrum-Qt.app bundle.
+brewhaustd/brewhaust-cli binaries are not included in the brewhaust-Qt.app bundle.
 
-If you are building `delectrumd` or `delectrum-qt` for others, your build machine should be set up
+If you are building `brewhaustd` or `brewhaust-qt` for others, your build machine should be set up
 as follows for maximum compatibility:
 
 All dependencies should be compiled with these flags:
@@ -92,30 +92,30 @@ All dependencies should be compiled with these flags:
  -arch x86_64
  -isysroot $(xcode-select --print-path)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk
 
-Once dependencies are compiled, see release-process.md for how the Delectrum-Qt.app
+Once dependencies are compiled, see release-process.md for how the Brewhaust-Qt.app
 bundle is packaged and signed to create the .dmg disk image that is distributed.
 
 Running
 -------
 
-It's now available at `./delectrumd`, provided that you are still in the `src`
+It's now available at `./brewhaustd`, provided that you are still in the `src`
 directory. We have to first create the RPC configuration file, though.
 
-Run `./delectrumd` to get the filename where it should be put, or just try these
+Run `./brewhaustd` to get the filename where it should be put, or just try these
 commands:
 
-    echo -e "rpcuser=delectrumrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Delectrum/delectrum.conf"
-    chmod 600 "/Users/${USER}/Library/Application Support/Delectrum/delectrum.conf"
+    echo -e "rpcuser=brewhaustrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Brewhaust/brewhaust.conf"
+    chmod 600 "/Users/${USER}/Library/Application Support/Brewhaust/brewhaust.conf"
 
 The next time you run it, it will start downloading the blockchain, but it won't
 output anything while it's doing this. This process may take several hours;
 you can monitor its process by looking at the debug.log file, like this:
 
-    tail -f $HOME/Library/Application\ Support/Delectrum/debug.log
+    tail -f $HOME/Library/Application\ Support/Brewhaust/debug.log
 
 Other commands:
 -------
 
-    ./delectrumd -daemon # to start the delectrum daemon.
-    ./delectrum-cli --help  # for a list of command-line options.
-    ./delectrum-cli help    # When the daemon is running, to get a list of RPC commands
+    ./brewhaustd -daemon # to start the brewhaust daemon.
+    ./brewhaust-cli --help  # for a list of command-line options.
+    ./brewhaust-cli help    # When the daemon is running, to get a list of RPC commands

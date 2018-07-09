@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The Delectrum developers
+// Copyright (c) 2015-2017 The Brewhaust developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -49,7 +49,7 @@ using namespace std;
 using namespace libzerocoin;
 
 #if defined(NDEBUG)
-#error "Delectrum cannot be compiled without assertions."
+#error "Brewhaust cannot be compiled without assertions."
 #endif
 
 // 6 comes from OPCODE (1) + vch.size() (1) + BIGNUM size (4)
@@ -2116,13 +2116,41 @@ double ConvertBitsToDouble(unsigned int nBits)
     return dDiff;
 }
 
+int64_t GetProofOfStakeReward(int nHeight) {
+    int64_t nSubsidy = GetBlockValue(nHeight); 
+    
+    if (nHeight < 100001) {
+        nSubsidy = 0 * COIN;
+    } else if (nHeight < 290001) {
+        nSubsidy = 2/20 * nSubsidy;
+    } else {
+        nSubsidy = 1/10 * nSubsidy;
+    }
+
+    return nSubsidy;
+}
+
 int64_t GetBlockValue(int nHeight)
 {
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
         if (nHeight < 200 && nHeight > 0)
             return 250000 * COIN;
     }
-    return (nHeight == 1) ? 33000000000 * COIN : 10000 * COIN;
+    
+    int64_t nSubsidy = 1 * COIN;
+    if (nHeight < 1) {
+        nSubsidy = 0 * COIN;
+    } else if (nHeight == 1) {
+        nSubsidy = 300000 * COIN; // PREMINE 300000 Brewhaust
+    } else if (nHeight < 1001) {
+        nSubsidy = 15 * COIN;
+    } else if (nHeight < 100001) {
+        nSubsidy = 20 * COIN;
+    } else {
+        nSubsidy = 10 * COIN;
+    }
+
+    return nSubsidy;
 }
 
 int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount)
@@ -2133,19 +2161,18 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
             return 0;
     }
 
-     if (nMasternodeCount < 1){
-        if (IsSporkActive(SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT))
-            nMasternodeCount = mnodeman.stable_size();
-        else
-            nMasternodeCount = mnodeman.size();
-    }
+    int64_t ret = blockValue;
 
-    int64_t mNodeCoins = nMasternodeCount * 10000 * COIN;
-    if (mNodeCoins == 0) {
-        return 0;
-    }else {
-        return blockValue * .18;
+    if (nHeight < 1001) {
+        ret = 1/2 * ret;
+    } else if (nHeight < 100001) {
+        ret = 10/15 * ret;
+    } else if (nHeight < 290001) {
+        ret = 15/20 * ret;
+    } else {
+        ret = 8/10 * ret;
     }
+    return ret;
 
     //return 1800 * COIN;
 }
@@ -2612,7 +2639,7 @@ bool DisconnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex
         const CTransaction& tx = block.vtx[i];
 
         /** UNDO ZEROCOIN DATABASING
-         * note we only undo zerocoin databasing in the following statement, value to and from Delectrum
+         * note we only undo zerocoin databasing in the following statement, value to and from Brewhaust
          * addresses should still be handled by the typical bitcoin based undo code
          * */
         if (tx.ContainsZerocoins()) {
@@ -2745,7 +2772,7 @@ static CCheckQueue<CScriptCheck> scriptcheckqueue(128);
 
 void ThreadScriptCheck()
 {
-    RenameThread("delectrum-scriptch");
+    RenameThread("brewhaust-scriptch");
     scriptcheckqueue.Thread();
 }
 
@@ -2812,7 +2839,7 @@ void RecalculateZDLTSpent()
     }
 }
 
-bool RecalculateDLTRSupply(int nHeightStart)
+bool RecalculateBRUSupply(int nHeightStart)
 {
     if (nHeightStart > chainActive.Height())
         return false;
@@ -2885,7 +2912,7 @@ bool RecalculateDLTRSupply(int nHeightStart)
 
 bool ReindexAccumulators(list<uint256>& listMissingCheckpoints, string& strError)
 {
-    // Delectrum: recalculate Accumulator Checkpoints that failed to database properly
+    // Brewhaust: recalculate Accumulator Checkpoints that failed to database properly
     if (!listMissingCheckpoints.empty() && chainActive.Height() >= Params().Zerocoin_StartHeight()) {
         //uiInterface.InitMessage(_("Calculating missing accumulators..."));
         LogPrintf("%s : finding missing checkpoints\n", __func__);
@@ -3142,7 +3169,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     if (pindex->nHeight == Params().Zerocoin_Block_RecalculateAccumulators() + 1) {
         RecalculateZDLTMinted();
         RecalculateZDLTSpent();
-        RecalculateDLTRSupply(Params().Zerocoin_StartHeight());
+        RecalculateBRUSupply(Params().Zerocoin_StartHeight());
     }
 
     //Track zDLT money supply in the block index
@@ -3328,7 +3355,7 @@ void static UpdateTip(CBlockIndex* pindexNew)
 {
     chainActive.SetTip(pindexNew);
 
-    // If turned on AutoZeromint will automatically convert DLTR to zDLT
+    // If turned on AutoZeromint will automatically convert BRU to zDLT
     if (pwalletMain->isZeromintEnabled ())
         pwalletMain->AutoZeromint ();
 
@@ -4167,7 +4194,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
                 nHeight = (*mi).second->nHeight + 1;
         }
 
-        // Delectrum
+        // Brewhaust
         // It is entierly possible that we don't have enough data and this could fail
         // (i.e. the block could indeed be valid). Store the block for later consideration
         // but issue an initial reject message.
@@ -5607,7 +5634,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
             return false;
         }
 
-        // Delectrum: We use certain sporks during IBD, so check to see if they are
+        // Brewhaust: We use certain sporks during IBD, so check to see if they are
         // available. If not, ask the first peer connected for them.
         bool fMissingSporks = !pSporkDB->SporkExists(SPORK_14_NEW_PROTOCOL_ENFORCEMENT) &&
                 !pSporkDB->SporkExists(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2) &&

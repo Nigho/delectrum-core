@@ -168,7 +168,7 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="../delectrum.qrc"/>
+  <include location="../brewhaust.qrc"/>
  </resources>
  <connections/>
 </ui>

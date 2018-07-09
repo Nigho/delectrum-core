@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Brewhaust
+Comment=Brewhaust P2P Cryptocurrency
+Comment[fr]=Brewhaust, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Brewhaust, eşten eşe kriptografik sanal para birimi
+Exec=brewhaust-qt %u
+Terminal=false
+Type=Application
+Icon=brewhaust128
+MimeType=x-scheme-handler/brewhaust;
+Categories=Office;Finance;

@@ -1,8 +1,8 @@
-// Copyright (c) 2017 The Delectrum developers
+// Copyright (c) 2017 The Brewhaust developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef DELECTRUM_ZEROCOIN_H
-#define DELECTRUM_ZEROCOIN_H
+#ifndef BREWHAUST_ZEROCOIN_H
+#define BREWHAUST_ZEROCOIN_H
 
 #include <amount.h>
 #include <limits.h>
@@ -189,4 +189,4 @@ public:
     int GetNeededSpends();
 };
 
-#endif //DELECTRUM_ZEROCOIN_H
+#endif //BREWHAUST_ZEROCOIN_H

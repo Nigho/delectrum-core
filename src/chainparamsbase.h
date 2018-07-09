@@ -9,8 +9,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between delectrum-cli and delectrumd)
- * of a given instance of the Delectrum system.
+ * CBaseChainParams defines the base parameters (shared between brewhaust-cli and brewhaustd)
+ * of a given instance of the Brewhaust system.
  */
 class CBaseChainParams
 {

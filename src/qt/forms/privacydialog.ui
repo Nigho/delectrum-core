@@ -191,7 +191,7 @@
                         <item>
                          <widget class="QLabel" name="labelzDLTSyncStatus">
                           <property name="toolTip">
-                           <string>The displayed information may be out of date. Your wallet automatically synchronizes with the Delectrum network after a connection is established, but this process has not completed yet.</string>
+                           <string>The displayed information may be out of date. Your wallet automatically synchronizes with the Brewhaust network after a connection is established, but this process has not completed yet.</string>
                           </property>
                           <property name="styleSheet">
                            <string notr="true">QLabel { color: red; }</string>
@@ -307,7 +307,7 @@
                            <string>Enter an amount of Dltr to convert to zDlt</string>
                           </property>
                           <property name="text">
-                           <string>0.000 000 00 DLTR</string>
+                           <string>0.000???000???00 BRU</string>
                           </property>
                           <property name="alignment">
                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -483,7 +483,7 @@
                              <enum>Qt::ActionsContextMenu</enum>
                             </property>
                             <property name="text">
-                             <string notr="true">0.00 DLTR</string>
+                             <string notr="true">0.00 BRU</string>
                             </property>
                             <property name="textInteractionFlags">
                              <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -827,7 +827,7 @@ zDLT are mature when they have more than 10 confirmations AND more than 2 mints 
                              </size>
                             </property>
                             <property name="toolTip">
-                             <string>The Delectrum address to send the payment to. Creates local payment to yourself when empty.</string>
+                             <string>The Brewhaust address to send the payment to. Creates local payment to yourself when empty.</string>
                             </property>
                            </widget>
                           </item>
@@ -840,7 +840,7 @@ zDLT are mature when they have more than 10 confirmations AND more than 2 mints 
                              <string/>
                             </property>
                             <property name="icon">
-                             <iconset resource="../delectrum.qrc">
+                             <iconset resource="../brewhaust.qrc">
                               <normaloff>:/icons/address-book</normaloff>:/icons/address-book</iconset>
                             </property>
                             <property name="shortcut">
@@ -857,7 +857,7 @@ zDLT are mature when they have more than 10 confirmations AND more than 2 mints 
                              <string/>
                             </property>
                             <property name="icon">
-                             <iconset resource="../delectrum.qrc">
+                             <iconset resource="../brewhaust.qrc">
                               <normaloff>:/icons/editpaste</normaloff>:/icons/editpaste</iconset>
                             </property>
                             <property name="shortcut">
@@ -1594,8 +1594,8 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
                            <string>Show the current status of automatic zDLT minting.
 
 To change the status (restart required):
-- enable: add 'enablezeromint=1' to delectrum.conf
-- disable: add 'enablezeromint=0' to delectrum.conf
+- enable: add 'enablezeromint=1' to brewhaust.conf
+- disable: add 'enablezeromint=0' to brewhaust.conf
 
 To change the percentage (no restart required):
 - menu Settings-&gt;Options-&gt;Percentage of autominted zDLT
@@ -2056,7 +2056,7 @@ To change the percentage (no restart required):
          <enum>Qt::ActionsContextMenu</enum>
         </property>
         <property name="text">
-         <string notr="true">0.000 000 00 DLTR</string>
+         <string notr="true">0.000???000???00 BRU</string>
         </property>
         <property name="textInteractionFlags">
          <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -2138,7 +2138,7 @@ To change the percentage (no restart required):
            <enum>Qt::ActionsContextMenu</enum>
           </property>
           <property name="text">
-           <string notr="true">0.00 DLTR</string>
+           <string notr="true">0.00 BRU</string>
           </property>
           <property name="textInteractionFlags">
            <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -2360,7 +2360,7 @@ To change the percentage (no restart required):
          <enum>Qt::ActionsContextMenu</enum>
         </property>
         <property name="text">
-         <string notr="true">0.000 000 00 DLTR</string>
+         <string notr="true">0.000???000???00 BRU</string>
         </property>
         <property name="textInteractionFlags">
          <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -2677,7 +2677,7 @@ To change the percentage (no restart required):
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../delectrum.qrc"/>
+  <include location="../brewhaust.qrc"/>
  </resources>
  <connections/>
 </ui>

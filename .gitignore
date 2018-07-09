@@ -6,12 +6,12 @@ reset-files.bash
 *.tar.gz
 
 *.exe
-src/delectrum-cli
-src/delectrum-tx
-src/delectrumd
-src/qt/delectrum-qt
-src/qt/test/test_delectrum
-src/test/test_delectrum
+src/brewhaust-cli
+src/brewhaust-tx
+src/brewhaustd
+src/qt/brewhaust-qt
+src/qt/test/test_brewhaust
+src/test/test_brewhaust
 
 # autoreconf
 Makefile.in
