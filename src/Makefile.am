@@ -124,6 +124,7 @@ BITCOIN_CORE_H = \
   eccryptoverify.h \
   ecwrapper.h \
   hash.h \
+  crypto/hashblock.h \
   httprpc.h \
   httpserver.h \
   init.h \
