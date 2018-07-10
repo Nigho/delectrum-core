@@ -2141,10 +2141,12 @@ int64_t GetBlockValue(int nHeight)
     if (nHeight < 1) {
         nSubsidy = 0 * COIN;
     } else if (nHeight == 1) {
-        nSubsidy = 300000 * COIN; // PREMINE 300000 Brewhaust
+        nSubsidy = 300000 * COIN; // premine 300000 BRU
     } else if (nHeight < 1001) {
-        nSubsidy = 15 * COIN;
+        nSubsidy = 2 * COIN;
     } else if (nHeight < 100001) {
+        nSubsidy = 15 * COIN;
+    } else if (nHeight < 290001) {
         nSubsidy = 20 * COIN;
     } else {
         nSubsidy = 10 * COIN;
@@ -3035,9 +3037,9 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
         return state.DoS(100, error("ConnectBlock() : PoS period not active"),
             REJECT_INVALID, "PoS-early");
 
-    if (pindex->nHeight > Params().LAST_POW_BLOCK() && block.IsProofOfWork())
-        return state.DoS(100, error("ConnectBlock() : PoW period ended"),
-            REJECT_INVALID, "PoW-ended");
+    //if (pindex->nHeight > Params().LAST_POW_BLOCK() && block.IsProofOfWork())
+    //    return state.DoS(100, error("ConnectBlock() : PoW period ended"),
+    //        REJECT_INVALID, "PoW-ended");
 
     bool fScriptChecks = pindex->nHeight >= Checkpoints::GetTotalBlocksEstimate();
 
