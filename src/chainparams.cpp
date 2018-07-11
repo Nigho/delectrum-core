@@ -126,7 +126,7 @@ public:
         vAlertPubKey = ParseHex("0000098d3ba6ba6e7423fa5cbd6a89e0a9a5348f88d332b44a5cb1a8b7ed2c1eaa335fc8dc4f012cb8241cc0bdafd6ca70c5f5448916e4e6f511bcd746ed57dc50");
         nDefaultPort = 48323;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // Brewhaust starting difficulty is 1 / 2^12
-        nSubsidyHalvingInterval = 210000;
+        nSubsidyHalvingInterval = 210000; // will be ignored since we have a custom logic
         nMaxReorganizationDepth = 100;
         nEnforceBlockUpgradeMajority = 750;
         nRejectBlockOutdatedMajority = 950;
@@ -136,18 +136,18 @@ public:
         nTargetSpacing = 2 * 60;  // Brewhaust: 1 minute
         nMaturity = 100;
         nMasternodeCountDrift = 20;
-        nMaxMoneyOut = 25000000 * COIN;
+        nMaxMoneyOut = 25000000 * COIN; // 25 000 000 BRU maximal supply
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 259200;
-        nModifierUpdateBlock = 615800;
-        nZerocoinStartHeight = 863787;
-        nZerocoinStartTime = 1576088075; // December 11, 2019 18:14:00 PM
-        nBlockEnforceSerialRange = 895400; //Enforce serial range starting this block
+        nLastPOWBlock = 259200; // just a placeholder, no worries x.x
+        nModifierUpdateBlock = 1;
+        nZerocoinStartHeight = 1;
+        nZerocoinStartTime = 1529678800; // Friday, 22. June 2018 14:46:40
+        nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 908000; //Trigger a recalculation of accumulators
-        nBlockFirstFraudulent = 891737; //First block that bad serials emerged
-        nBlockLastGoodCheckpoint = 891730; //Last valid accumulator checkpoint
-        nBlockEnforceInvalidUTXO = 902850; //Start enforcing the invalid UTXO's
+        nBlockFirstFraudulent = 1; //First block that bad serials emerged
+        nBlockLastGoodCheckpoint = 1; //Last valid accumulator checkpoint
+        nBlockEnforceInvalidUTXO = 1; //Start enforcing the invalid UTXO's
 
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
@@ -197,6 +197,7 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 
+        // TODO: add valid seeds
         vSeeds.push_back(CDNSSeedData("139.59.255.75", "139.59.255.75"));
         vSeeds.push_back(CDNSSeedData("139.59.254.248", "139.59.254.248"));
         vSeeds.push_back(CDNSSeedData("167.99.72.42", "167.99.72.42"));
@@ -224,7 +225,7 @@ public:
         nPoolMaxTransactions = 3;
         strSporkKey = "04B433E6598390C992F4F022F20D3B4CBBE691652EE7C48243B81701CBDB7CC7D7BF0EE09E154E6FCBF2043D65AF4E9E97B89B5DBAF830D83B9B7F469A6C45A717";
         strObfuscationPoolDummyAddress = "BPCNSMRcrH6QamMQ9AuC68YedDDi3A3nhU";
-        nStartMasternodePayments = 1471602051;
+        nStartMasternodePayments = 1529678800; // Friday, 22. June 2018 14:46:40
 
         /** Zerocoin */
         zerocoinModulus = "25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784"
