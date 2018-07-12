@@ -199,10 +199,9 @@ public:
         vSeeds.clear();
 
         // TODO: add valid seeds
-        vSeeds.push_back(CDNSSeedData("139.59.255.75", "139.59.255.75"));
-        vSeeds.push_back(CDNSSeedData("139.59.254.248", "139.59.254.248"));
-        vSeeds.push_back(CDNSSeedData("167.99.72.42", "167.99.72.42"));
-        vSeeds.push_back(CDNSSeedData("167.99.72.43", "167.99.72.43"));
+        vSeeds.push_back(CDNSSeedData("167.99.222.115", "167.99.222.115"));
+        vSeeds.push_back(CDNSSeedData("188.166.97.230", "188.166.97.230"));
+        vSeeds.push_back(CDNSSeedData("167.99.33.3", "167.99.33.3"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 25);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 28);
