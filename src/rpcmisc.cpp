@@ -64,17 +64,17 @@ UniValue getinfo(const UniValue& params, bool fHelp)
             "  \"difficulty\": xxxxxx,       (numeric) the current difficulty\n"
             "  \"testnet\": true|false,      (boolean) if the server is using testnet or not\n"
             "  \"moneysupply\" : \"supply\"       (numeric) The money supply when this block was added to the blockchain\n"
-            "  \"zBRUsupply\" :\n"
+            "  \"zDLTsupply\" :\n"
             "  {\n"
-            "     \"1\" : n,            (numeric) supply of 1 zBRU denomination\n"
-            "     \"10\" : n,            (numeric) supply of 10 zBRU denomination\n"
-            "     \"100\" : n,           (numeric) supply of 100 zBRU denomination\n"
-            "     \"1000\" : n,           (numeric) supply of 1000 zBRU denomination\n"
-            "     \"10000\" : n,          (numeric) supply of 10000 zBRU denomination\n"
-            "     \"100000\" : n,          (numeric) supply of 100000 zBRU denomination\n"
-            "     \"1000000\" : n,         (numeric) supply of 1000000 zBRU denomination\n"
-            "     \"10000000\" : n,         (numeric) supply of 10000000 zBRU denomination\n"
-            "     \"total\" : n,        (numeric) The total supply of all zBRU denominations\n"
+            "     \"1\" : n,            (numeric) supply of 1 zDLT denomination\n"
+            "     \"10\" : n,            (numeric) supply of 10 zDLT denomination\n"
+            "     \"100\" : n,           (numeric) supply of 100 zDLT denomination\n"
+            "     \"1000\" : n,           (numeric) supply of 1000 zDLT denomination\n"
+            "     \"10000\" : n,          (numeric) supply of 10000 zDLT denomination\n"
+            "     \"100000\" : n,          (numeric) supply of 100000 zDLT denomination\n"
+            "     \"1000000\" : n,         (numeric) supply of 1000000 zDLT denomination\n"
+            "     \"10000000\" : n,         (numeric) supply of 10000000 zDLT denomination\n"
+            "     \"total\" : n,        (numeric) The total supply of all zDLT denominations\n"
             "  }\n"
             "  \"keypoololdest\": xxxxxx,    (numeric) the timestamp (seconds since GMT epoch) of the oldest pre-generated key in the key pool\n"
             "  \"keypoolsize\": xxxx,        (numeric) how many new keys are pre-generated\n"
@@ -120,12 +120,12 @@ UniValue getinfo(const UniValue& params, bool fHelp)
     }
 
     obj.push_back(Pair("moneysupply",ValueFromAmount(chainActive.Tip()->nMoneySupply)));
-    UniValue zBRUObj(UniValue::VOBJ);
+    UniValue zdltObj(UniValue::VOBJ);
     for (auto denom : libzerocoin::zerocoinDenomList) {
-        zBRUObj.push_back(Pair(to_string(denom), ValueFromAmount(chainActive.Tip()->mapZerocoinSupply.at(denom) * (denom*COIN))));
+        zdltObj.push_back(Pair(to_string(denom), ValueFromAmount(chainActive.Tip()->mapZerocoinSupply.at(denom) * (denom*COIN))));
     }
-    zBRUObj.push_back(Pair("total", ValueFromAmount(chainActive.Tip()->GetZerocoinSupply())));
-    obj.push_back(Pair("zBRUsupply", zBRUObj));
+    zdltObj.push_back(Pair("total", ValueFromAmount(chainActive.Tip()->GetZerocoinSupply())));
+    obj.push_back(Pair("zDLTsupply", zdltObj));
 
 #ifdef ENABLE_WALLET
     if (pwalletMain) {

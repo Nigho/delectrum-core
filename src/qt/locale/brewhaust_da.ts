@@ -3765,7 +3765,7 @@ https://www.transifex.com/Nigho/Nigho-translations</translation>
     </message>
 </context>
 <context>
-    <name>zBRUControlDialog</name>
+    <name>ZDltControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>

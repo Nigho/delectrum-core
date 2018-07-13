@@ -58,7 +58,7 @@ QT_TRANSLATE_NOOP("brewhaust-core", ""
 QT_TRANSLATE_NOOP("brewhaust-core", ""
 "Enable SwiftX, show confirmations for locked transactions (bool, default: %s)"),
 QT_TRANSLATE_NOOP("brewhaust-core", ""
-"Enable automatic wallet backups triggered after each zBRU minting (0-1, "
+"Enable automatic wallet backups triggered after each zDlt minting (0-1, "
 "default: %u)"),
 QT_TRANSLATE_NOOP("brewhaust-core", ""
 "Enable spork administration functionality with the appropriate private key."),

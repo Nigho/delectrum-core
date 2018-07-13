@@ -2484,7 +2484,7 @@ UniValue mintzerocoin(const UniValue& params, bool fHelp)
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
             "mintzerocoin amount ( UTXOs )\n"
-            "amount: (numeric, required) Enter an amount of Dltr to convert to zBRU\n"
+            "amount: (numeric, required) Enter an amount of Dltr to convert to zDlt\n"
             "UTXOs: (string, optional) A json array of objects. Each object needs the txid (string) and vout (numeric)\n"
             "     [           (json array of json objects)\n"
             "       {\n"
@@ -2514,7 +2514,7 @@ UniValue mintzerocoin(const UniValue& params, bool fHelp)
 
     int64_t nTime = GetTimeMillis();
     if(GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE))
-        throw JSONRPCError(RPC_WALLET_ERROR, "zBRU is currently disabled due to maintenance.");
+        throw JSONRPCError(RPC_WALLET_ERROR, "zDLT is currently disabled due to maintenance.");
 
     if (pwalletMain->IsLocked())
         throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Please enter the wallet passphrase with walletpassphrase first.");
@@ -2577,7 +2577,7 @@ UniValue spendzerocoin(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 5 || params.size() < 4)
         throw runtime_error(
             "spendzerocoin <amount> <mintchange [true|false]> <minimizechange [true|false]>  <securitylevel [1-100]> <address>\n"
-            "Overview: Convert zBRU (zerocoins) into BRU. \n"
+            "Overview: Convert zDLT (zerocoins) into BRU. \n"
             "amount: amount to spend\n"
             "mintchange: if there is left over BRU (change), the wallet can convert it automatically back to zerocoins [true]\n"
             "minimizechange: try to minimize the returning change  [false]\n"
@@ -2591,14 +2591,14 @@ UniValue spendzerocoin(const UniValue& params, bool fHelp)
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     if(GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE))
-        throw JSONRPCError(RPC_WALLET_ERROR, "zBRU is currently disabled due to maintenance.");
+        throw JSONRPCError(RPC_WALLET_ERROR, "zDLT is currently disabled due to maintenance.");
 
     int64_t nTimeStart = GetTimeMillis();
     if (pwalletMain->IsLocked())
         throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Please enter the wallet passphrase with walletpassphrase first.");
 
     CAmount nAmount = AmountFromValue(params[0]);   // Spending amount
-    bool fMintChange = params[1].get_bool();        // Mint change to zBRU
+    bool fMintChange = params[1].get_bool();        // Mint change to zDLT
     bool fMinimizeChange = params[2].get_bool();    // Minimize change
     int nSecurityLevel = params[3].get_int();       // Security level
 
@@ -2799,7 +2799,7 @@ UniValue exportzerocoins(const UniValue& params, bool fHelp)
 
                 "\nArguments:\n"
                 "1. \"include_spent\"        (bool, required) Include mints that have already been spent\n"
-                "2. \"denomination\"         (integer, optional) Export a specific denomination of zBRU\n"
+                "2. \"denomination\"         (integer, optional) Export a specific denomination of zDlt\n"
 
                 "\nResult\n"
                 "[                   (array of json object)\n"
@@ -2865,7 +2865,7 @@ UniValue importzerocoins(const UniValue& params, bool fHelp)
 
                 "\nResult:\n"
                 "\"added\"            (int) the quantity of zerocoin mints that were added\n"
-                "\"value\"            (string) the total zBRU value of zerocoin mints that were added\n"
+                "\"value\"            (string) the total zDlt value of zerocoin mints that were added\n"
 
                 "\nExamples\n" +
             HelpExampleCli("importzerocoins", "\'[{\"d\":100,\"p\":\"mypubcoin\",\"s\":\"myserial\",\"r\":\"randomness_hex\",\"t\":\"mytxid\",\"h\":104923, \"u\":false},{\"d\":5,...}]\'") +
@@ -2923,7 +2923,7 @@ UniValue reconsiderzerocoins(const UniValue& params, bool fHelp)
     if(fHelp || !params.empty())
         throw runtime_error(
             "reconsiderzerocoins\n"
-                "\nCheck archived zBRU list to see if any mints were added to the blockchain.\n"
+                "\nCheck archived zDlt list to see if any mints were added to the blockchain.\n"
 
                 "\nResult\n"
                 "[                                 (array of json objects)\n"

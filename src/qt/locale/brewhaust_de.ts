@@ -618,8 +618,8 @@
         <translation>&amp;Privatsphäre</translation>
     </message>
     <message>
-        <source>Privacy Action for zBRU and Obfuscation</source>
-        <translation>Privatsphäre Aktion für zBRU und Verschleierung</translation>
+        <source>Privacy Action for zDLT and Obfuscation</source>
+        <translation>Privatsphäre Aktion für zDLT und Verschleierung</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -1707,20 +1707,20 @@ https://www.transifex.com/Nigho/Nigho-translations</translation>
         <translation>Port mit &amp;UPnP mappen</translation>
     </message>
     <message>
-        <source>Percentage of incoming BRU which get automatically converted to zBRU via Zerocoin Protocol (min: 10%)</source>
-        <translation>Anteil des einkommenden BRU, welcher automatisch zu zBRU via Zerocoin Protokoll konvertiert wird (min: 10%)</translation>
+        <source>Percentage of incoming BRU which get automatically converted to zDLT via Zerocoin Protocol (min: 10%)</source>
+        <translation>Anteil des einkommenden BRU, welcher automatisch zu zDLT via Zerocoin Protokoll konvertiert wird (min: 10%)</translation>
     </message>
     <message>
-        <source>Percentage of autominted zBRU</source>
-        <translation>Prozentsatz der automatisierten zBRU</translation>
+        <source>Percentage of autominted zDLT</source>
+        <translation>Prozentsatz der automatisierten zDLT</translation>
     </message>
     <message>
         <source>Wait with automatic conversion to Zerocoin until enough BRU for this denomination is available</source>
         <translation>Warte mit automatischer Konvertierung zu Zerocoin, bis genügend BRU für diese Stückelung verfügbar ist</translation>
     </message>
     <message>
-        <source>Preferred Automint zBRU Denomination</source>
-        <translation>Bevorzugte automatisierte zBRU Stückelung </translation>
+        <source>Preferred Automint zDLT Denomination</source>
+        <translation>Bevorzugte automatisierte zDLT Stückelung </translation>
     </message>
     <message>
         <source>Connect to the Brewhaust network through a SOCKS5 proxy.</source>
@@ -1926,8 +1926,8 @@ https://www.transifex.com/Nigho/Nigho-translations</translation>
         <translation>BRU:</translation>
     </message>
     <message>
-        <source>zBRU:</source>
-        <translation>zBRU:</translation>
+        <source>zDLT:</source>
+        <translation>zDLT:</translation>
     </message>
     <message>
         <source>0 %</source>
@@ -2059,8 +2059,8 @@ https://www.transifex.com/Nigho/Nigho-translations</translation>
         <translation>BRU, die über das Zerocin-Protokoll anonymisiert wurden</translation>
     </message>
     <message>
-        <source>Zerocoin BRU (zBRU)</source>
-        <translation>Zerocoin BRU (zBRU)</translation>
+        <source>Zerocoin BRU (zDLT)</source>
+        <translation>Zerocoin BRU (zDLT)</translation>
     </message>
     <message>
         <source>Zerocoin Actions:</source>
@@ -2071,8 +2071,8 @@ https://www.transifex.com/Nigho/Nigho-translations</translation>
         <translation>Die angezeigte Information ist möglicherweise nicht mehr aktuell. Ihre Wallet synchronisiert sich automatisch mit dem Brewhaust-Netzwerk, nachdem eine Verbindung hergestellt wurde. Aber dieser Vorgang ist noch nicht abgeschlossen.</translation>
     </message>
     <message>
-        <source>Enter an amount of Dltr to convert to zBRU</source>
-        <translation>Eingabe des Dltr-Betrags, um in zBRU umzuwandeln</translation>
+        <source>Enter an amount of Dltr to convert to zDlt</source>
+        <translation>Eingabe des Dltr-Betrags, um in zDlt umzuwandeln</translation>
     </message>
     <message>
         <source>Mint Zerocoin</source>
@@ -2083,8 +2083,8 @@ https://www.transifex.com/Nigho/Nigho-translations</translation>
         <translation>0</translation>
     </message>
     <message>
-        <source>zBRU</source>
-        <translation>zBRU</translation>
+        <source>zDLT</source>
+        <translation>zDLT</translation>
     </message>
     <message>
         <source>Available for Minting:</source>
@@ -2127,12 +2127,12 @@ https://www.transifex.com/Nigho/Nigho-translations</translation>
         <translation>Status und/oder Mitteilungen aus der letzten Präge-Action</translation>
     </message>
     <message>
-        <source>zBRU Control</source>
-        <translation>zBRU Kontrolle</translation>
+        <source>zDlt Control</source>
+        <translation>zDlt Kontrolle</translation>
     </message>
     <message>
-        <source>zBRU Selected:</source>
-        <translation>zBRU Ausgewählt:</translation>
+        <source>zDlt Selected:</source>
+        <translation>zDlt Ausgewählt:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -2151,8 +2151,8 @@ https://www.transifex.com/Nigho/Nigho-translations</translation>
         <translation>Verfügbare Bilanz:</translation>
     </message>
     <message>
-        <source>0 zBRU</source>
-        <translation>0 zBRU</translation>
+        <source>0 zDLT</source>
+        <translation>0 zDLT</translation>
     </message>
     <message>
         <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
@@ -2387,8 +2387,8 @@ https://www.transifex.com/Nigho/Nigho-translations</translation>
         <translation>Erfolgreich geprägt</translation>
     </message>
     <message>
-        <source> zBRU in </source>
-        <translation> zBRU in </translation>
+        <source> zDLT in </source>
+        <translation> zDLT in </translation>
     </message>
     <message>
         <source> sec. Used denominations:
@@ -2481,8 +2481,8 @@ Bitte haben Sie Geduld...</translation>
         <translation>Ausgeben Zerocoin fehlgeschlagen mit Status =</translation>
     </message>
     <message>
-        <source>zBRU Spend #: </source>
-        <translation>zBRU Ausgeben #:</translation>
+        <source>zDlt Spend #: </source>
+        <translation>zDLT Ausgeben #:</translation>
     </message>
     <message>
         <source>denomination: </source>
@@ -2505,8 +2505,8 @@ Bitte haben Sie Geduld...</translation>
         <translation>Adresse:</translation>
     </message>
     <message>
-        <source>zBRU Mint</source>
-        <translation>zBRU Prägen</translation>
+        <source>zDlt Mint</source>
+        <translation>zDlt Prägen</translation>
     </message>
     <message>
         <source>Sending successful, return code: </source>
@@ -3962,32 +3962,32 @@ Bitte haben Sie Geduld...</translation>
         <translation>Verschleiert</translation>
     </message>
     <message>
-        <source>Converted Dltr to zBRU</source>
-        <translation>Umgewandeltes BRU zu zBRU</translation>
+        <source>Converted Dltr to zDlt</source>
+        <translation>Umgewandeltes BRU zu zDLT</translation>
     </message>
     <message>
-        <source>Spent zBRU</source>
-        <translation>Ausgeben zBRU</translation>
+        <source>Spent zDlt</source>
+        <translation>Ausgeben zDLT</translation>
     </message>
     <message>
-        <source>Received Dltr from zBRU</source>
-        <translation>Empfangene BRU von zBRU</translation>
+        <source>Received Dltr from zDlt</source>
+        <translation>Empfangene BRU von zDLT</translation>
     </message>
     <message>
-        <source>Minted Change as zBRU from zBRU Spend</source>
-        <translation>Geprägtes Wechselgeld als zBRU von zBRU Ausgabe</translation>
+        <source>Minted Change as zDlt from zDlt Spend</source>
+        <translation>Geprägtes Wechselgeld als zDLT von zDLT Ausgabe</translation>
     </message>
     <message>
-        <source>Converted zBRU to Dltr</source>
-        <translation>Umgewandeltes zBRU zu BRU</translation>
+        <source>Converted zDlt to Dltr</source>
+        <translation>Umgewandeltes zDLT zu BRU</translation>
     </message>
     <message>
         <source>watch-only</source>
         <translation>nur beobachtet</translation>
     </message>
     <message>
-        <source>zBRU Accumulator</source>
-        <translation>zBRU Speicher</translation>
+        <source>zDlt Accumulator</source>
+        <translation>zDLT Speicher</translation>
     </message>
     <message>
         <source>(n/a)</source>
@@ -4097,8 +4097,8 @@ Bitte haben Sie Geduld...</translation>
         <translation>Masternode Vergütung</translation>
     </message>
     <message>
-        <source>Received Dltr from zBRU</source>
-        <translation>Empfangen BRU von zBRU</translation>
+        <source>Received Dltr from zDlt</source>
+        <translation>Empfangen BRU von zDLT</translation>
     </message>
     <message>
         <source>Zerocoin Mint</source>
@@ -4109,8 +4109,8 @@ Bitte haben Sie Geduld...</translation>
         <translation>Zerocoin Ausgabe</translation>
     </message>
     <message>
-        <source>Zerocoin Spend, Change in zBRU</source>
-        <translation>Zerocoin Ausgabe, Wechselgeld in zBRU</translation>
+        <source>Zerocoin Spend, Change in zDlt</source>
+        <translation>Zerocoin Ausgabe, Wechselgeld in zDLT</translation>
     </message>
     <message>
         <source>Zerocoin Spend to Self</source>
@@ -4278,10 +4278,10 @@ Bitte haben Sie Geduld...</translation>
     </message>
 </context>
 <context>
-    <name>zBRUControlDialog</name>
+    <name>ZDltControlDialog</name>
     <message>
-        <source>Select zBRU to Spend</source>
-        <translation>Auswahl zBRU als Ausgabe</translation>
+        <source>Select zDlt to Spend</source>
+        <translation>Auswahl zDLT als Ausgabe</translation>
     </message>
     <message>
         <source>Quantity</source>
@@ -4292,8 +4292,8 @@ Bitte haben Sie Geduld...</translation>
         <translation>0</translation>
     </message>
     <message>
-        <source>zBRU</source>
-        <translation>zBRU</translation>
+        <source>zDlt</source>
+        <translation>zDLT</translation>
     </message>
     <message>
         <source>Select/Deselect All</source>

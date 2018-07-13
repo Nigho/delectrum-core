@@ -1500,16 +1500,16 @@ MultiSend: %1</translation>
 <context>
     <name>PrivacyDialog</name>
     <message>
-        <source>Enter an amount of Dltr to convert to zBRU</source>
-        <translation>Vul de hoeveleheid in om Dltr te converteren naar zBRU</translation>
+        <source>Enter an amount of Dltr to convert to zDlt</source>
+        <translation>Vul de hoeveleheid in om Dltr te converteren naar zDlt</translation>
     </message>
     <message>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
-        <source>zBRU</source>
-        <translation>zBRU</translation>
+        <source>zDLT</source>
+        <translation>zDLT</translation>
     </message>
     <message>
         <source>Reset</source>
@@ -2737,10 +2737,10 @@ MultiSend: %1</translation>
     </message>
 </context>
 <context>
-    <name>zBRUControlDialog</name>
+    <name>ZDltControlDialog</name>
     <message>
-        <source>Select zBRU to Spend</source>
-        <translation>Selecteer zBRU om te spenderen</translation>
+        <source>Select zDlt to Spend</source>
+        <translation>Selecteer zDlt om te spenderen</translation>
     </message>
     <message>
         <source>Quantity</source>
@@ -2751,8 +2751,8 @@ MultiSend: %1</translation>
         <translation>0</translation>
     </message>
     <message>
-        <source>zBRU</source>
-        <translation>zBRU</translation>
+        <source>zDlt</source>
+        <translation>zDlt</translation>
     </message>
     <message>
         <source>Select/Deselect All</source>

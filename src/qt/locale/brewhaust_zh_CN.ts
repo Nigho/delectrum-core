@@ -1515,7 +1515,7 @@ Address: %4
     </message>
     </context>
 <context>
-    <name>zBRUControlDialog</name>
+    <name>ZDltControlDialog</name>
     </context>
 <context>
     <name>brewhaust-core</name>
