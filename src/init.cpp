@@ -372,7 +372,7 @@ std::string HelpMessage(HelpMessageMode mode)
 #endif
     strUsage += HelpMessageOpt("-reindex", _("Rebuild block chain index from current blk000??.dat files") + " " + _("on startup"));
     strUsage += HelpMessageOpt("-reindexaccumulators", _("Reindex the accumulator database") + " " + _("on startup"));
-    strUsage += HelpMessageOpt("-reindexmoneysupply", _("Reindex the BRU and zDLT money supply statistics") + " " + _("on startup"));
+    strUsage += HelpMessageOpt("-reindexmoneysupply", _("Reindex the BRU and zBRU money supply statistics") + " " + _("on startup"));
     strUsage += HelpMessageOpt("-resync", _("Delete blockchain folders and resync from scratch") + " " + _("on startup"));
 #if !defined(WIN32)
     strUsage += HelpMessageOpt("-sysperms", _("Create new files with system default permissions, instead of umask 077 (only effective with disabled wallet functionality)"));
@@ -524,7 +524,7 @@ std::string HelpMessage(HelpMessageMode mode)
     strUsage += HelpMessageOpt("-enablezeromint=<n>", strprintf(_("Enable automatic Zerocoin minting (0-1, default: %u)"), 1));
     strUsage += HelpMessageOpt("-zeromintpercentage=<n>", strprintf(_("Percentage of automatically minted Zerocoin  (1-100, default: %u)"), 10));
     strUsage += HelpMessageOpt("-preferredDenom=<n>", strprintf(_("Preferred Denomination for automatically minted Zerocoin  (1/10/100/1000/10000/100000/1000000/10000000), 0 for no preference. default: %u)"), 0));
-    strUsage += HelpMessageOpt("-backupzdlt=<n>", strprintf(_("Enable automatic wallet backups triggered after each zDlt minting (0-1, default: %u)"), 1));
+    strUsage += HelpMessageOpt("-backupzBRU=<n>", strprintf(_("Enable automatic wallet backups triggered after each zBRU minting (0-1, default: %u)"), 1));
 
 //    strUsage += "  -anonymizebrewhaustamount=<n>     " + strprintf(_("Keep N BRU anonymized (default: %u)"), 0) + "\n";
 //    strUsage += "  -liquidityprovider=<n>       " + strprintf(_("Provide liquidity to Obfuscation by infrequently mixing coins on a continual basis (0-100, default: %u, 1=very frequent, high fees, 100=very infrequent, low fees)"), 0) + "\n";
@@ -1419,8 +1419,8 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
                 // Recalculate money supply for blocks that are impacted by accounting issue after zerocoin activation
                 if (GetBoolArg("-reindexmoneysupply", false)) {
                     if (chainActive.Height() > Params().Zerocoin_StartHeight()) {
-                        RecalculateZDLTMinted();
-                        RecalculateZDLTSpent();
+                        RecalculatezBRUMinted();
+                        RecalculatezBRUSpent();
                     }
                     RecalculateBRUSupply(1);
                 }
@@ -1624,8 +1624,8 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
         }
         fVerifyingBlocks = false;
 
-        bool fEnableZDltBackups = GetBoolArg("-backupzdlt", true);
-        pwalletMain->setZDltAutoBackups(fEnableZDltBackups);
+        bool fEnablezBRUBackups = GetBoolArg("-backupzBRU", true);
+        pwalletMain->setzBRUAutoBackups(fEnablezBRUBackups);
     }  // (!fDisableWallet)
 #else  // ENABLE_WALLET
     LogPrintf("No wallet compiled in!\n");

@@ -971,7 +971,7 @@
     </message>
     </context>
 <context>
-    <name>ZDltControlDialog</name>
+    <name>zBRUControlDialog</name>
     </context>
 <context>
     <name>brewhaust-core</name>

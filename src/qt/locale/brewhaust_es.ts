@@ -618,8 +618,8 @@
         <translation>&amp;Privacidad</translation>
     </message>
     <message>
-        <source>Privacy Action for zDLT and Obfuscation</source>
-        <translation>Privacidad con zDLT y Ofuscación</translation>
+        <source>Privacy Action for zBRU and Obfuscation</source>
+        <translation>Privacidad con zBRU y Ofuscación</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -1696,12 +1696,12 @@ https://www.transifex.com/Nigho/Nigho-translations</translation>
         <translation>Mapear un puerto utilizando &amp;UPnP</translation>
     </message>
     <message>
-        <source>Percentage of incoming BRU which get automatically converted to zDLT via Zerocoin Protocol (min: 10%)</source>
-        <translation>Porcentaje de BRUs entrantes que serán automáticamente convertidos a zDLT a través del Protocolo Zerocoin (mín: 10%)</translation>
+        <source>Percentage of incoming BRU which get automatically converted to zBRU via Zerocoin Protocol (min: 10%)</source>
+        <translation>Porcentaje de BRUs entrantes que serán automáticamente convertidos a zBRU a través del Protocolo Zerocoin (mín: 10%)</translation>
     </message>
     <message>
-        <source>Percentage of autominted zDLT</source>
-        <translation>Porcentaje de zDLT autogenerados</translation>
+        <source>Percentage of autominted zBRU</source>
+        <translation>Porcentaje de zBRU autogenerados</translation>
     </message>
     <message>
         <source>Wait with automatic conversion to Zerocoin until enough BRU for this denomination is available</source>
@@ -3805,7 +3805,7 @@ https://www.transifex.com/Nigho/Nigho-translations</translation>
     </message>
 </context>
 <context>
-    <name>ZDltControlDialog</name>
+    <name>zBRUControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>
