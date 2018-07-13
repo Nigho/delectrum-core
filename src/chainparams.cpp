@@ -142,12 +142,12 @@ public:
         /** Height or Time Based Activations **/
         nLastPOWBlock = 259200; // just a placeholder, no worries x.x
         nModifierUpdateBlock = 1;
-        nZerocoinStartHeight = 1;
+        nZerocoinStartHeight = 20;
         nZerocoinStartTime = 1529678800; // Friday, 22. June 2018 14:46:40
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 908000; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 1; //First block that bad serials emerged
-        nBlockLastGoodCheckpoint = 1; //Last valid accumulator checkpoint
+        nBlockLastGoodCheckpoint = 0; //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 1; //Start enforcing the invalid UTXO's
 
         /**
