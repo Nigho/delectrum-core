@@ -172,7 +172,7 @@
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_3">
                         <item>
-                         <widget class="QLabel" name="labelzDLTActions">
+                         <widget class="QLabel" name="labelzBRUActions">
                           <property name="font">
                            <font>
                             <pointsize>12</pointsize>
@@ -189,7 +189,7 @@
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzDLTSyncStatus">
+                         <widget class="QLabel" name="labelzBRUSyncStatus">
                           <property name="toolTip">
                            <string>The displayed information may be out of date. Your wallet automatically synchronizes with the Brewhaust network after a connection is established, but this process has not completed yet.</string>
                           </property>
@@ -244,7 +244,7 @@
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_4">
                         <item>
-                         <widget class="QPushButton" name="pushButtonMintzDLT">
+                         <widget class="QPushButton" name="pushButtonMintzBRU">
                           <property name="minimumSize">
                            <size>
                             <width>131</width>
@@ -252,7 +252,7 @@
                            </size>
                           </property>
                           <property name="toolTip">
-                           <string>Enter an amount of Dltr to convert to zDlt</string>
+                           <string>Enter an amount of Dltr to convert to zBru</string>
                           </property>
                           <property name="text">
                            <string>Mint Zerocoin</string>
@@ -276,14 +276,14 @@
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzDLT_2">
+                         <widget class="QLabel" name="labelzBRU_2">
                           <property name="text">
-                           <string>zDLT</string>
+                           <string>zBRU</string>
                           </property>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzDLTAmountText">
+                         <widget class="QLabel" name="labelzBRUAmountText">
                           <property name="toolTip">
                            <string>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</string>
                           </property>
@@ -296,7 +296,7 @@
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzDLTAmountValue">
+                         <widget class="QLabel" name="labelzBRUAmountValue">
                           <property name="font">
                            <font>
                             <weight>75</weight>
@@ -304,7 +304,7 @@
                            </font>
                           </property>
                           <property name="toolTip">
-                           <string>Enter an amount of Dltr to convert to zDlt</string>
+                           <string>Enter an amount of Dltr to convert to zBru</string>
                           </property>
                           <property name="text">
                            <string>0.000???000???00 BRU</string>
@@ -603,21 +603,21 @@
                          <number>0</number>
                         </property>
                         <item>
-                         <widget class="QPushButton" name="pushButtonZDltControl">
+                         <widget class="QPushButton" name="pushButtonZBruControl">
                           <property name="text">
-                           <string>zDlt Control</string>
+                           <string>zBru Control</string>
                           </property>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzDltSelected">
+                         <widget class="QLabel" name="labelzBruSelected">
                           <property name="text">
-                           <string>zDlt Selected:</string>
+                           <string>zBru Selected:</string>
                           </property>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzDltSelected_int">
+                         <widget class="QLabel" name="labelzBruSelected_int">
                           <property name="text">
                            <string>0</string>
                           </property>
@@ -671,7 +671,7 @@
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_6">
                         <item>
-                         <widget class="QPushButton" name="pushButtonSpendzDLT">
+                         <widget class="QPushButton" name="pushButtonSpendzBRU">
                           <property name="minimumSize">
                            <size>
                             <width>131</width>
@@ -687,9 +687,9 @@
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzDLTBalanceText">
+                         <widget class="QLabel" name="labelzBRUBalanceText">
                           <property name="toolTip">
-                           <string>Available (mature and spendable) zDLT for spending</string>
+                           <string>Available (mature and spendable) zBRU for spending</string>
                           </property>
                           <property name="text">
                            <string>Available Balance:</string>
@@ -708,12 +708,12 @@
                            </font>
                           </property>
                           <property name="toolTip">
-                           <string>Available (mature and spendable) zDLT for spending
+                           <string>Available (mature and spendable) zBRU for spending
 
-zDLT are mature when they have more than 10 confirmations AND more than 2 mints of the same denomination after them were minted</string>
+zBRU are mature when they have more than 10 confirmations AND more than 2 mints of the same denomination after them were minted</string>
                           </property>
                           <property name="text">
-                           <string>0 zDLT</string>
+                           <string>0 zBRU</string>
                           </property>
                           <property name="alignment">
                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -908,7 +908,7 @@ zDLT are mature when they have more than 10 confirmations AND more than 2 mints 
                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                           </property>
                           <property name="buddy">
-                           <cstring>zDLTpayAmount</cstring>
+                           <cstring>zBRUpayAmount</cstring>
                           </property>
                          </widget>
                         </item>
@@ -918,10 +918,10 @@ zDLT are mature when they have more than 10 confirmations AND more than 2 mints 
                            <number>0</number>
                           </property>
                           <item>
-                           <widget class="QLineEdit" name="zDLTpayAmount"/>
+                           <widget class="QLineEdit" name="zBRUpayAmount"/>
                           </item>
                           <item>
-                           <widget class="QLabel" name="labelzDLT">
+                           <widget class="QLabel" name="labelzBRU">
                             <property name="alignment">
                              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                             </property>
@@ -932,7 +932,7 @@ zDLT are mature when they have more than 10 confirmations AND more than 2 mints 
                              </size>
                             </property>
                             <property name="text">
-                             <string>zDLT</string>
+                             <string>zBRU</string>
                             </property>
                            </widget>
                           </item>
@@ -1013,7 +1013,7 @@ zDLT are mature when they have more than 10 confirmations AND more than 2 mints 
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_21">
                         <item>
-                         <widget class="QLabel" name="labelzDLTStats">
+                         <widget class="QLabel" name="labelzBRUStats">
                           <property name="font">
                            <font>
                             <pointsize>12</pointsize>
@@ -1093,7 +1093,7 @@ zDLT are mature when they have more than 10 confirmations AND more than 2 mints 
                            </font>
                           </property>
                           <property name="toolTip">
-                           <string>Total Balance including unconfirmed and immature zDLT</string>
+                           <string>Total Balance including unconfirmed and immature zBRU</string>
                           </property>
                           <property name="text">
                            <string>Total Zerocoin  Balance:</string>
@@ -1131,10 +1131,10 @@ zDLT are mature when they have more than 10 confirmations AND more than 2 mints 
                            </font>
                           </property>
                           <property name="toolTip">
-                           <string>Total Balance including unconfirmed and immature zDLT</string>
+                           <string>Total Balance including unconfirmed and immature zBRU</string>
                           </property>
                           <property name="text">
-                           <string>0 zDLT</string>
+                           <string>0 zBRU</string>
                           </property>
                           <property name="alignment">
                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1591,14 +1591,14 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
                         <item>
                          <widget class="QLabel" name="label_AutoMintStatus">
                           <property name="toolTip">
-                           <string>Show the current status of automatic zDLT minting.
+                           <string>Show the current status of automatic zBRU minting.
 
 To change the status (restart required):
 - enable: add 'enablezeromint=1' to brewhaust.conf
 - disable: add 'enablezeromint=0' to brewhaust.conf
 
 To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zDLT
+- menu Settings-&gt;Options-&gt;Percentage of autominted zBRU
 
 </string>
                           </property>
@@ -1678,7 +1678,7 @@ To change the percentage (no restart required):
                            </font>
                           </property>
                           <property name="text">
-                           <string>0 zDLT</string>
+                           <string>0 zBRU</string>
                           </property>
                          </widget>
                         </item>
@@ -1709,7 +1709,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount1">
                           <property name="text">
-                           <string>0 zDLT</string>
+                           <string>0 zBRU</string>
                           </property>
                          </widget>
                         </item>
@@ -1740,7 +1740,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount10">
                           <property name="text">
-                           <string>0 zDLT</string>
+                           <string>0 zBRU</string>
                           </property>
                          </widget>
                         </item>
@@ -1771,7 +1771,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount100">
                           <property name="text">
-                           <string>0 zDLT</string>
+                           <string>0 zBRU</string>
                           </property>
                          </widget>
                         </item>
@@ -1802,7 +1802,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount1000">
                           <property name="text">
-                           <string>0 zDLT</string>
+                           <string>0 zBRU</string>
                           </property>
                          </widget>
                         </item>
@@ -1833,7 +1833,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount10000">
                           <property name="text">
-                           <string>0 zDLT</string>
+                           <string>0 zBRU</string>
                           </property>
                          </widget>
                         </item>
@@ -1864,7 +1864,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount100000">
                           <property name="text">
-                           <string>0 zDLT</string>
+                           <string>0 zBRU</string>
                           </property>
                          </widget>
                         </item>
@@ -1895,7 +1895,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount1000000">
                           <property name="text">
-                           <string>0 zDLT</string>
+                           <string>0 zBRU</string>
                           </property>
                          </widget>
                         </item>
@@ -1926,7 +1926,7 @@ To change the percentage (no restart required):
                         <item>
                          <widget class="QLabel" name="labelZsupplyAmount10000000">
                           <property name="text">
-                           <string>0 zDLT</string>
+                           <string>0 zBRU</string>
                           </property>
                          </widget>
                         </item>

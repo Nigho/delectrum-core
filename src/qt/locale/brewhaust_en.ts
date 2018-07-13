@@ -546,7 +546,7 @@
     </message>
     <message>
         <location line="+11"/>
-        <source>Privacy Actions for zDLT</source>
+        <source>Privacy Actions for zBRU</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2419,12 +2419,12 @@ https://www.transifex.com/Nigho/Nigho-translations</source>
     </message>
     <message>
         <location line="-133"/>
-        <source>Percentage of incoming BRU which get automatically converted to zDLT via Zerocoin Protocol (min: 10%)</source>
+        <source>Percentage of incoming BRU which get automatically converted to zBRU via Zerocoin Protocol (min: 10%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Percentage of autominted zDLT</source>
+        <source>Percentage of autominted zBRU</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2435,7 +2435,7 @@ https://www.transifex.com/Nigho/Nigho-translations</source>
     </message>
     <message>
         <location line="-13"/>
-        <source>Preferred Automint zDLT Denomination</source>
+        <source>Preferred Automint zBRU Denomination</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2711,12 +2711,12 @@ https://www.transifex.com/Nigho/Nigho-translations</source>
     </message>
     <message>
         <location line="+35"/>
-        <source>zDLT:</source>
+        <source>zBRU:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Current percentage of zDLT.
+        <source>Current percentage of zBRU.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2729,7 +2729,7 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
     <message>
         <location line="-46"/>
         <location line="+13"/>
-        <source>Locked BRU or Masternode collaterals. These are excluded from zDLT minting.</source>
+        <source>Locked BRU or Masternode collaterals. These are excluded from zBRU minting.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2749,7 +2749,7 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
     <message>
         <location line="+7"/>
         <location line="+10"/>
-        <source>Unlocked BRUs. These can be used for zDLT minting.</source>
+        <source>Unlocked BRUs. These can be used for zBRU minting.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2766,7 +2766,7 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
         <location line="+14"/>
         <location line="+104"/>
         <source>Mature: more than 10 confirmation and more than 3 mints of the same denomination after it was minted.
-These zDLT are spendable.</source>
+These zBRU are spendable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2777,7 +2777,7 @@ These zDLT are spendable.</source>
     <message>
         <location line="+23"/>
         <location line="+35"/>
-        <source>All available zDLT, unconfirmed and immature zDLT included.</source>
+        <source>All available zBRU, unconfirmed and immature zBRU included.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2807,7 +2807,7 @@ Immature: confirmed, but less than 3 mints of the same denomination after it was
     </message>
     <message>
         <location line="+93"/>
-        <source>Current percentage of zDLT.
+        <source>Current percentage of zBRU.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
 </source>
         <translation type="unfinished"></translation>
@@ -2978,7 +2978,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+6"/>
-        <source>Zerocoin BRU (zDLT)</source>
+        <source>Zerocoin BRU (zBRU)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2994,7 +2994,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     <message>
         <location line="+52"/>
         <location line="+46"/>
-        <source>Enter an amount of Dltr to convert to zDlt</source>
+        <source>Enter an amount of Dltr to convert to zBru</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3014,7 +3014,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     <message>
         <location line="-349"/>
         <location line="+629"/>
-        <source>zDLT</source>
+        <source>zBRU</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3074,12 +3074,12 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+45"/>
-        <source>zDlt Control</source>
+        <source>zBru Control</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>zDlt Selected:</source>
+        <source>zBru Selected:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3104,7 +3104,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+7"/>
-        <source>Available (mature and spendable) zDLT for spending</source>
+        <source>Available (mature and spendable) zBRU for spending</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3114,15 +3114,15 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
     <message>
         <location line="+16"/>
-        <source>Available (mature and spendable) zDLT for spending
+        <source>Available (mature and spendable) zBRU for spending
 
-zDLT are mature when they have more than 10 confirmations AND more than 2 mints of the same denomination after them were minted</source>
+zBRU are mature when they have more than 10 confirmations AND more than 2 mints of the same denomination after them were minted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+5"/>
         <location line="+417"/>
-        <source>0 zDLT</source>
+        <source>0 zBRU</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3213,7 +3213,7 @@ zDLT are mature when they have more than 10 confirmations AND more than 2 mints 
     <message>
         <location line="+62"/>
         <location line="+38"/>
-        <source>Total Balance including unconfirmed and immature zDLT</source>
+        <source>Total Balance including unconfirmed and immature zBRU</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3424,13 +3424,13 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
     <message>
         <location line="+45"/>
         <location line="+3"/>
-        <source>zDLT is currently disabled due to maintenance.</source>
+        <source>zBRU is currently disabled due to maintenance.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+50"/>
         <location line="+113"/>
-        <source>zDLT is currently undergoing maintenance.</source>
+        <source>zBRU is currently undergoing maintenance.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3455,7 +3455,7 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
     </message>
     <message>
         <location line="+0"/>
-        <source> zDLT in </source>
+        <source> zBRU in </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3567,7 +3567,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+15"/>
-        <source>zDlt Spend #: </source>
+        <source>zBru Spend #: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3597,7 +3597,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+3"/>
-        <source>zDlt Mint</source>
+        <source>zBru Mint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5533,27 +5533,27 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+2"/>
-        <source>Converted Dltr to zDlt</source>
+        <source>Converted Dltr to zBru</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Spent zDlt</source>
+        <source>Spent zBru</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Received Dltr from zDlt</source>
+        <source>Received Dltr from zBru</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Minted Change as zDlt from zDlt Spend</source>
+        <source>Minted Change as zBru from zBru Spend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Converted zDlt to Dltr</source>
+        <source>Converted zBru to Dltr</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5563,7 +5563,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+22"/>
-        <source>zDlt Accumulator</source>
+        <source>zBru Accumulator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5702,7 +5702,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Received Dltr from zDlt</source>
+        <source>Received Dltr from zBru</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5717,7 +5717,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Zerocoin Spend, Change in zDlt</source>
+        <source>Zerocoin Spend, Change in zBru</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5927,10 +5927,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>ZDltControlDialog</name>
+    <name>ZBruControlDialog</name>
     <message>
-        <location filename="../forms/zdltcontroldialog.ui" line="+20"/>
-        <source>Select zDlt to Spend</source>
+        <location filename="../forms/zbrucontroldialog.ui" line="+20"/>
+        <source>Select zBru to Spend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5946,7 +5946,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="-7"/>
-        <source>zDlt</source>
+        <source>zBru</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6836,7 +6836,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Brewhaust Alert&quot; admin@fo
     </message>
     <message>
         <location line="+2"/>
-        <source>Enable automatic wallet backups triggered after each zDlt minting (0-1, default: %u)</source>
+        <source>Enable automatic wallet backups triggered after each zBru minting (0-1, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

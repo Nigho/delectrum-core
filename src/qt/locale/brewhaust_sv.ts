@@ -1416,7 +1416,7 @@ Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den k
     </message>
     </context>
 <context>
-    <name>ZDltControlDialog</name>
+    <name>ZBruControlDialog</name>
     </context>
 <context>
     <name>brewhaust-core</name>
