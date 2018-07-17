@@ -9,6 +9,7 @@
 #include "masternodeconfig.h"
 #include "masternodeman.h"
 #include "protocol.h"
+#include "spork.h"
 
 //
 // Bootup the Masternode, look for a 2500 Brewhaust input and register on the network
@@ -192,7 +193,7 @@ bool CActiveMasternode::SendMasternodePing(std::string& errorMessage)
          * AFTER MIGRATION TO V12 IS DONE
          */
 
-        if (true) return true;
+        if (IsSporkActive(SPORK_10_MASTERNODE_PAY_UPDATED_NODES)) return true;
         // for migration purposes ping our node on old masternodes network too
         std::string retErrorMessage;
         std::vector<unsigned char> vchMasterNodeSignature;
@@ -306,7 +307,7 @@ bool CActiveMasternode::Register(CTxIn vin, CService service, CKey keyCollateral
      * AFTER MIGRATION TO V12 IS DONE
      */
 
-    if (true) return true;
+    if (IsSporkActive(SPORK_10_MASTERNODE_PAY_UPDATED_NODES)) return true;
     // for migration purposes inject our node in old masternodes' list too
     std::string retErrorMessage;
     std::vector<unsigned char> vchMasterNodeSignature;

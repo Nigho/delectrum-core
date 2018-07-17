@@ -377,6 +377,7 @@ static const CRPCCommand vRPCCommands[] =
         {"brewhaust", "mnfinalbudget", &mnfinalbudget, true, true, false},
         {"brewhaust", "checkbudgets", &checkbudgets, true, true, false},
         {"brewhaust", "mnsync", &mnsync, true, true, false},
+        {"brewhaust", "spork", &spork, true, true, false},
         {"brewhaust", "getpoolinfo", &getpoolinfo, true, true, false},
 #ifdef ENABLE_WALLET
         {"brewhaust", "obfuscation", &obfuscation, false, false, true}, /* not threadSafe because of SendMoney */

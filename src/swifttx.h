@@ -10,6 +10,7 @@
 #include "key.h"
 #include "main.h"
 #include "net.h"
+#include "spork.h"
 #include "sync.h"
 #include "util.h"
 
