@@ -46,6 +46,8 @@ int64_t CreateNewLock(CTransaction tx);
 
 bool IsIXTXValid(const CTransaction& txCollateral);
 
+void ReprocessBlocks(int nBlocks);
+
 // if two conflicting locks are approved by the network, they will cancel out
 bool CheckForConflictingLocks(CTransaction& tx);
 
