@@ -424,7 +424,7 @@ bool GenerateAccumulatorWitness(const PublicCoin &coin, Accumulator& accumulator
     }
 
     if (nMintsAdded < Params().Zerocoin_RequiredAccumulation()) {
-        strError = _(strprintf("Less than %d mints added, unable to create spend", Params().Zerocoin_RequiredAccumulation()).c_str());
+        strError = (strprintf("Less than %d mints added, unable to create spend", Params().Zerocoin_RequiredAccumulation()).c_str());
         LogPrintf("%s : %s\n", __func__, strError);
         return false;
     }
