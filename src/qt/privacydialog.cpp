@@ -15,7 +15,6 @@
 #include "walletmodel.h"
 #include "coincontrol.h"
 #include "zbrucontroldialog.h"
-#include "spork.h"
 #include "askpassphrasedialog.h"
 
 #include <QClipboard>
@@ -105,15 +104,6 @@ PrivacyDialog::PrivacyDialog(QWidget* parent) : QDialog(parent),
     // Hide those placeholder elements needed for CoinControl interaction
     ui->WarningLabel->hide();    // Explanatory text visible in QT-Creator
     ui->dummyHideWidget->hide(); // Dummy widget with elements to hide
-
-    //temporary disable for maintenance
-    if(GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE)) {
-        ui->pushButtonMintzBRU->setEnabled(false);
-        ui->pushButtonMintzBRU->setToolTip(tr("zBRU is currently disabled due to maintenance."));
-
-        ui->pushButtonSpendzBRU->setEnabled(false);
-        ui->pushButtonSpendzBRU->setToolTip(tr("zBRU is currently disabled due to maintenance."));
-    }
 }
 
 PrivacyDialog::~PrivacyDialog()
@@ -160,13 +150,6 @@ void PrivacyDialog::on_pushButtonMintzBRU_clicked()
 {
     if (!walletModel || !walletModel->getOptionsModel())
         return;
-
-    if(GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE)) {
-        QMessageBox::information(this, tr("Mint Zerocoin"),
-                                 tr("zBRU is currently undergoing maintenance."), QMessageBox::Ok,
-                                 QMessageBox::Ok);
-        return;
-    }
 
     // Reset message text
     ui->TEMintStatus->setPlainText(tr("Mint Status: Okay"));
@@ -271,12 +254,6 @@ void PrivacyDialog::on_pushButtonSpendzBRU_clicked()
 
     if (!walletModel || !walletModel->getOptionsModel() || !pwalletMain)
         return;
-
-    if(GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE)) {
-        QMessageBox::information(this, tr("Mint Zerocoin"),
-                                 tr("zBRU is currently undergoing maintenance."), QMessageBox::Ok, QMessageBox::Ok);
-        return;
-    }
 
     // Request unlock if wallet was locked or unlocked for mixing:
     WalletModel::EncryptionStatus encStatus = walletModel->getEncryptionStatus();

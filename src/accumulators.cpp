@@ -8,7 +8,6 @@
 #include "main.h"
 #include "txdb.h"
 #include "init.h"
-#include "spork.h"
 
 using namespace libzerocoin;
 

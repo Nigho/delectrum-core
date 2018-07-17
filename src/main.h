@@ -46,7 +46,6 @@
 class CBlockIndex;
 class CBlockTreeDB;
 class CZerocoinDB;
-class CSporkDB;
 class CBloomFilter;
 class CInv;
 class CScriptCheck;
@@ -647,9 +646,6 @@ extern CBlockTreeDB* pblocktree;
 
 /** Global variable that points to the zerocoin database (protected by cs_main) */
 extern CZerocoinDB* zerocoinDB;
-
-/** Global variable that points to the spork database (protected by cs_main) */
-extern CSporkDB* pSporkDB;
 
 struct CBlockTemplate {
     CBlock block;
